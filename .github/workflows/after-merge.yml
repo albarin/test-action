@@ -1,0 +1,16 @@
+on:
+  pull_request:
+    types: [closed]
+
+name: Merged Pull Requests
+
+jobs:
+  whenMerged:
+    if: github.event.pull_request.merged
+    name: Run after merge
+    runs-on: ubuntu-latest
+    steps:
+      - name: After merge action
+        run: |
+          echo "Hello, I'm running only after a merged PR"
+          echo ${{ github.event.pull_request.merged }}
