@@ -6,6 +6,7 @@ name: Merged Pull Requests
 
 jobs:
   whenMerged:
+    if: github.event.pull_request.merged
     name: Run after merge
     runs-on: ubuntu-latest
     steps:
